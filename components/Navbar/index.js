@@ -10,7 +10,7 @@ const NavBar = () => (
             Precisando de ? Fale com !
             </a>
         </Link>
-      </nav>
+        </nav>
     </div>
   </nav>
 )

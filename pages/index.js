@@ -1,11 +1,13 @@
 import React from "react";
 import PageTitle from "../components/PageTitle"
+import Header from "../components/Header";
 
 const Index = () =>{
   return(
     <>
-    <div>Olá Mundo</div>
+    
     <PageTitle title = "Seja bem Vindo!"/>
+    <Header />
     </>
   )
 }
