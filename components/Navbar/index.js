@@ -2,11 +2,13 @@ import React from "react";
 import Link from "next/link";
 
 const NavBar = () => (
-  <nav>
-    <div>
-      <nav>
+  <nav className="w-full py-4 bg-yellow-600 shadow">
+    <div className="w-full container mx-auto flex flex-wrap items-center justify-between">
+      <nav className="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
         <Link href= "/">
-          <a>Precisando de ? Fale com !</a>
+          <a className="hover:text-gray-200 hover:underline px-4">
+            Precisando de ? Fale com !
+            </a>
         </Link>
       </nav>
     </div>
