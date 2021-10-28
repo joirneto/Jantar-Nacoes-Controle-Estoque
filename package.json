@@ -1,0 +1,36 @@
+{
+  "name": "precisandodefalecom",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joirneto/PrecisandoDeFaleCom.git"
+  },
+  "keywords": [
+    "profissionais",
+    "indicação"
+  ],
+  "author": "Joir Neto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joirneto/PrecisandoDeFaleCom/issues"
+  },
+  "homepage": "https://github.com/joirneto/PrecisandoDeFaleCom#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "google-spreadsheet": "^3.1.15",
+    "hamburger-react": "^2.4.1",
+    "next": "^12.0.1",
+    "postcss-import": "^14.0.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "swr": "^1.0.1",
+    "tailwindcss": "^2.2.17"
+  }
+}
