@@ -7,6 +7,12 @@ const Footer = () =>(
       </div>
       <div><img  src='/logo_ibf.png' height="150" width="150" /> </div>
       <div className="uppercase pb-6"> &copy; precisandodefalecom.vercel.app </div>
+      <div>
+      Projeto desenvolvido por:
+        Joir Neto / {' '}
+        <a className='hover:underline' href="https://linkedin.com/in/joir-neto">Linkedin</a> / {' '}
+        <a className='hover:underline' href="https://github.com/joirneto">Github</a>
+        </div>
     </div>
   </footer>
 )
