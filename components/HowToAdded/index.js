@@ -1,0 +1,25 @@
+import React from "react";
+import Link from "next/link";
+
+const HowToAdded = () => (
+  <div className="w-full bg-white shadow flex flex-col my-4 p-6">
+    <p className="text-xl font-semibold pb-5" >Como ser Adicionado?</p>
+    <p className="pb-2">Conhece e/ou indica um excelente profissional? Você é prestador de serviço? <br/>
+      <span className="font-bold">
+        Cadastre-se gratuitamente
+      </span> aqui e seja encontrado mais facilmente!
+    </p>
+    <p className="text-xs">
+      Todos os cadastros passam por aprovação prévia antes de serem mostrados.
+    </p>
+    <Link href = "/new">
+      <a className="w-full bg-red-900 text-white font-bold text-sm uppercase rounded hover:bg-yellow-500 flex items-center justify-center px-2 py-3 mt-4">
+      Quero Indicar/Cadastrar!
+      </a>
+    </Link>
+  </div>
+
+)
+
+export default HowToAdded
+
