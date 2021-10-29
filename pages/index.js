@@ -1,10 +1,13 @@
-import React, {useEffect} from "react";
+import React, {useState, useEffect} from "react";
 import PageTitle from "../components/PageTitle"
 import Header from "../components/Header";
+import NavSections from "../components/NavSections";
 import HowToAdded from "../components/HowToAdded";
 import HowWorks from "../components/HowWorks";
 
 const Index = () =>{
+  const [isLoading, setLoading] = useState(true);
+  const [dados, setDados] = useState({});
 
   useEffect(async () => {
     try {
@@ -19,19 +22,29 @@ const Index = () =>{
           }
         })
 
-        
+        setDados({ category, allData, filter: "" })
       }
-      console.log(category)
+      setLoading(false)
+      
     } catch (error) {
       console.log(error)
     }
-  }, [])
+  }, []);
+
+  const filterResults = (filter) => () => {
+    setDados({ ...dados, filter })
+  }
 
   return(
     <>
-    
     <PageTitle title = "Seja bem Vindo!"/>
     <Header />
+    {isLoading && (
+      <p className="container text-center text-4xl font-bold">Aguarde...</p>
+    )}
+    {!isLoading && (
+        <NavSections cat={dados.category} action={filterResults} />
+      )}
     <aside className= "w-full md:w-1/3 flex flex-col items-center px-3" >
       <HowToAdded />
     </aside>
