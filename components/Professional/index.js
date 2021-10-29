@@ -2,7 +2,7 @@ import React from "react"
 import Image from "next/image"
 
 const Professional = ({ data: { category, nome, tel, isWhats } }) => (
-  <article className="flex flex-col shadow my-4 w-full">
+  <article className="flex flex-col shadow my-4 w-10/12">
     <div className="bg-white flex flex-col justify-start p-6">
       <span className="text-red-800 text-sm font-bold uppercase pb-4">
         {category}
@@ -19,7 +19,7 @@ const Professional = ({ data: { category, nome, tel, isWhats } }) => (
         <a
           href={`https://api.whatsapp.com/send?phone=${tel}&text=Olá. Gostaria de saber mais sobre seus serviços de ${category}`}
           target="blank"
-          className="w-full bg-yellow-600 text-white font-bold text-sm uppercase rounded hover:bg-pink-900 flex items-center justify-center px-2 py-3 mt-4"
+          className="w-full bg-red-900 text-white font-bold text-sm uppercase rounded hover:bg-red-700 flex items-center justify-center px-2 py-3 mt-4"
         >
           <Image
             src="/whatsapp.png"

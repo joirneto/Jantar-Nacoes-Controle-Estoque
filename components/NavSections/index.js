@@ -18,11 +18,11 @@ const NavSection = ({ cat, action }) => {
       <div
         className={`${
           isOpen ? "w-full container mx-auto flex flex-col" : "hidden sm:flex"
-        } sm:flex-row items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2`}
+        } sm:flex-row flex-wrap items-center justify-center text-sm font-bold uppercase mt-0 px-6 py-2`}
       >
         {cat.map((item, index) => (
           <span
-            className="text-red-900 hover:bg-yellow-600 rounded py-2 px-4 mx-2"
+            className="text-red-900 text-lg hover:text-yellow-600 rounded py-2 px-4 mx-2"
             key={index}
             onClick={action(item)}
           >
