@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import PageTitle from "../components/PageTitle"
 import Header from "../components/Header";
 import NavSections from "../components/NavSections";
+import Professional from "../components/Professional";
 import HowToAdded from "../components/HowToAdded";
 import HowWorks from "../components/HowWorks";
 
@@ -45,9 +46,28 @@ const Index = () =>{
     {!isLoading && (
         <NavSections cat={dados.category} action={filterResults} />
       )}
-    <aside className= "w-full md:w-1/3 flex flex-col items-center px-3" >
-      <HowToAdded />
-    </aside>
+    <div className="container mx-auto flex flex-wrap py-6">
+        {!isLoading && (
+          <section className="w-full md:w-2/3 flex flex-col items-center px-3">
+            {dados?.allData.map((item, index) => {
+              if (
+                !dados.filter ||
+                item.category.toLowerCase() === dados.filter.toLowerCase()
+              ) {
+                return <Professional key={index} data={item} />
+              }
+            })}
+          </section>
+        )}
+        <aside
+          className={`w-full ${
+            isLoading ? "w-full" : "md:w-1/3"
+          } flex flex-col items-center px-3`}
+        >
+          <HowToAdded />
+          {/* <Instagram /> */}
+        </aside>
+      </div>
     <HowWorks />
     </>
   )

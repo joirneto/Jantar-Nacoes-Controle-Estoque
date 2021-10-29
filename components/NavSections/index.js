@@ -22,7 +22,7 @@ const NavSection = ({ cat, action }) => {
       >
         {cat.map((item, index) => (
           <span
-            className="hover:bg-gray-400 rounded py-2 px-4 mx-2"
+            className="text-red-900 hover:bg-yellow-600 rounded py-2 px-4 mx-2"
             key={index}
             onClick={action(item)}
           >
