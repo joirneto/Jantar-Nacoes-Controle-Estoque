@@ -7,7 +7,7 @@ const Footer = () =>(
       </div>
       <div><img  src='/logo_ibf.png' height="150" width="150" /> </div>
       <div className="uppercase pb-6"> &copy; precisandodefalecom.vercel.app </div>
-      <div className="items-center justify-between">
+      <div className="px-2 items-center justify-between">
       Projeto desenvolvido por:
         Joir Neto / {' '}
         <a className='hover:underline' href="https://linkedin.com/in/joir-neto">Linkedin</a> / {' '}
