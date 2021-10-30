@@ -12,7 +12,7 @@ const Professional = ({ data: { category, nome, tel, isWhats } }) => (
       </span>
       <p className="text-sm pb-3">
         Telefone:{" "}
-        <span className="font-semibold hover:text-gray-800">{tel}</span>
+        <span className="font-semibold hover:text-gray-800">{tel.replace("55 85", "(85) 9")}</span>
       </p>
 
       {isWhats && (
