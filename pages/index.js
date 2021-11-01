@@ -38,7 +38,7 @@ const Index = () =>{
 
   return(
     <>
-    <PageTitle title = "Seja bem Vindo!"/>
+    <PageTitle title = "Home"/>
     <Header />
     {isLoading && (
       <p className="container text-center text-4xl font-bold">Aguarde...</p>
