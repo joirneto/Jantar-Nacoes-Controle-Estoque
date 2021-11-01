@@ -76,6 +76,12 @@ const HowWorks = () => (
           title="Gostaria de indicar algumas pessoas. Como faço?"
           text="Apenas preencha o formulário com os dados. Periodicamente, os dados são revisados e em breve constarão no site."
           />
+          <Item
+          title="Só indique se for verdade e de qualidade!"
+          text="rt. 37. É proibida toda publicidade enganosa ou abusiva.
+          CDC - Lei nº 8.078 de 11 de Setembro de 1990
+          Artigo 37 da Lei nº 8.078 de 11 de Setembro de 1990."
+          />
       </section>
     </div>
   </div>
