@@ -14,7 +14,6 @@ const Professional = ({ data: { category, nome, tel, isWhats } }) => (
         Telefone:{" "}
         <span className="font-semibold hover:text-gray-800">{tel.replace("55 85", "(85) 9")}</span>
       </p>
-
       {isWhats && (
         <a
           href={`https://api.whatsapp.com/send?phone=${tel}&text=Olá. Gostaria de saber mais sobre seus serviços de ${category}`}

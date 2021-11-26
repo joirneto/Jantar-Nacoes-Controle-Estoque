@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import PageTitle from "../components/PageTitle"
 import Header from "../components/Header";
 import NavSections from "../components/NavSections";
@@ -6,7 +6,7 @@ import Professional from "../components/Professional";
 import HowToAdded from "../components/HowToAdded";
 import HowWorks from "../components/HowWorks";
 
-const Index = () =>{
+const Index = () => {
   const [isLoading, setLoading] = useState(true);
   const [dados, setDados] = useState({});
 
@@ -26,7 +26,7 @@ const Index = () =>{
         setDados({ category, allData, filter: "" })
       }
       setLoading(false)
-      
+
     } catch (error) {
       console.log(error)
     }
@@ -36,17 +36,17 @@ const Index = () =>{
     setDados({ ...dados, filter })
   }
 
-  return(
+  return (
     <>
-    <PageTitle title = "Home"/>
-    <Header />
-    {isLoading && (
-      <p className="container text-center text-4xl font-bold">Aguarde...</p>
-    )}
-    {!isLoading && (
+      <PageTitle title="Home" />
+      <Header />
+      {isLoading && (
+        <p className="container text-center text-4xl font-bold">Aguarde...</p>
+      )}
+      {!isLoading && (
         <NavSections cat={dados.category} action={filterResults} />
       )}
-    <div className="container mx-auto flex flex-wrap py-6">
+      <div className="container mx-auto flex flex-wrap py-6">
         {!isLoading && (
           <section className="w-full md:w-2/3 flex flex-col items-center px-3">
             {dados?.allData.map((item, index) => {
@@ -60,15 +60,14 @@ const Index = () =>{
           </section>
         )}
         <aside
-          className={`w-full ${
-            isLoading ? "w-full" : "md:w-1/3"
-          } flex flex-col items-center px-3`}
+          className={`w-full ${isLoading ? "w-full" : "md:w-1/3"
+            } flex flex-col items-center px-3`}
         >
           <HowToAdded />
           {/* <Instagram /> */}
         </aside>
       </div>
-    <HowWorks />
+      <HowWorks />
     </>
   )
 }

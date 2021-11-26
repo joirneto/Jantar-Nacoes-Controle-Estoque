@@ -37,7 +37,7 @@ const Cadastro = () => {
         })
         await response.json()
         setSuccess(true)
-      } catch (error) {}
+      } catch (error) { }
     },
   })
 
@@ -57,11 +57,10 @@ const Cadastro = () => {
               <div className="flex flex-wrap -m-2">
                 <div className="p-2 w-full">
                   <input
-                    className={`${
-                      errors.Nome && touched.Nome
+                    className={`${errors.Nome && touched.Nome
                         ? "border-red-400"
                         : "border-gray-400"
-                    } w-full bg-gray-100 rounded border focus:outline-none focus:border-purple-500 text-base px-4 py-2`}
+                      } w-full bg-gray-100 rounded border focus:outline-none focus:border-purple-500 text-base px-4 py-2`}
                     placeholder="Nome Completo"
                     type="text"
                     name="Nome"
@@ -72,11 +71,10 @@ const Cadastro = () => {
                 </div>
                 <div className="p-2 w-full md:w-1/2">
                   <input
-                    className={`${
-                      errors.Telefone && touched.Telefone
+                    className={`${errors.Telefone && touched.Telefone
                         ? "border-red-400"
                         : "border-gray-400"
-                    } w-full bg-gray-100 rounded border focus:outline-none focus:border-purple-500 text-base px-4 py-2`}
+                      } w-full bg-gray-100 rounded border focus:outline-none focus:border-purple-500 text-base px-4 py-2`}
                     placeholder="Telefone com Whatsapp"
                     type="text"
                     name="Telefone"
@@ -87,11 +85,10 @@ const Cadastro = () => {
                 </div>
                 <div className="p-2 w-full md:w-1/2">
                   <input
-                    className={`${
-                      errors.Categoria && touched.Categoria
+                    className={`${errors.Categoria && touched.Categoria
                         ? "border-red-400"
                         : "border-gray-400"
-                    } w-full bg-gray-100 rounded border focus:outline-none focus:border-purple-500 text-base px-4 py-2`}
+                      } w-full bg-gray-100 rounded border focus:outline-none focus:border-purple-500 text-base px-4 py-2`}
                     placeholder="Categoria (Frete, Encanador, Pintor...)"
                     type="text"
                     name="Categoria"
