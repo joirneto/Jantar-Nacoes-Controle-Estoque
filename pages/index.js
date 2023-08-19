@@ -2,39 +2,33 @@ import React, { useState, useEffect } from "react";
 import PageTitle from "../components/PageTitle"
 import Header from "../components/Header";
 import NavSections from "../components/NavSections";
-import Professional from "../components/Professional";
-import HowToAdded from "../components/HowToAdded";
+import Equipes from "../components/Equipes";
 import HowWorks from "../components/HowWorks";
+import formatarMoeda from "../utils/formatarMoeda";
 
 const Index = () => {
   const [isLoading, setLoading] = useState(true);
   const [dados, setDados] = useState({});
+  const [total, setTotal] = useState(0);
 
   useEffect(async () => {
     try {
       const response = await fetch("/api/get-professionals")
       const allData = await response.json()
+      setDados(allData)
 
-      const category = []
-      if (Object.keys(allData).length > 0) {
-        allData?.map((item) => {
-          if (!category.includes(item.category)) {
-            category.push(item.category)
-          }
-        })
+      const somaValores = allData?.reduce((acc, cur) => {
+        console.log(acc, cur)
+        return acc + parseInt(cur.valor)
+      }, 0)
 
-        setDados({ category, allData, filter: "" })
-      }
+      setTotal(somaValores)
       setLoading(false)
 
     } catch (error) {
       console.log(error)
     }
   }, []);
-
-  const filterResults = (filter) => () => {
-    setDados({ ...dados, filter })
-  }
 
   return (
     <>
@@ -43,29 +37,23 @@ const Index = () => {
       {isLoading && (
         <p className="container text-center text-4xl font-bold">Aguarde...</p>
       )}
+      <div className="container mx-auto flex flex-wrap justify-center items-center">
       {!isLoading && (
-        <NavSections cat={dados.category} action={filterResults} />
-      )}
-      <div className="container mx-auto flex flex-wrap py-6">
+        <><span className="text-green-600 text-8xl font-bold hover:text-gray-700 pb-4">
+          OBJETIVO: {formatarMoeda(20000)}
+        </span><span className="text-indigo-900 text-8xl font-bold hover:text-gray-700 pb-4">
+            VEDINDO: {formatarMoeda(total)}
+        </span><span className="text-cyan-600 text-8xl font-bold hover:text-gray-700 pb-4">
+            FALTA: {formatarMoeda(20000 - total)}
+        </span></>
+        )}
         {!isLoading && (
-          <section className="w-full md:w-2/3 flex flex-col items-center px-3">
-            {dados?.allData.map((item, index) => {
-              if (
-                !dados.filter ||
-                item.category.toLowerCase() === dados.filter.toLowerCase()
-              ) {
-                return <Professional key={index} data={item} />
-              }
+          <section className="grid gap-4 grid-cols-4 grid-rows-3">
+            {dados?.map((item, index) => {
+              return <Equipes key={index} data={item} />
             })}
           </section>
         )}
-        <aside
-          className={`w-full ${isLoading ? "w-full" : "md:w-1/3"
-            } flex flex-col items-center px-3`}
-        >
-          <HowToAdded />
-          {/* <Instagram /> */}
-        </aside>
       </div>
       <HowWorks />
     </>

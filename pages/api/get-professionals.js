@@ -1,13 +1,13 @@
 import { GoogleSpreadsheet } from "google-spreadsheet"
 import { fromBase64 } from "../../utils/base64"
-
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
+const cred = require('../../cred.json')
 
 export default async (req, res) => {
   try {
     await doc.useServiceAccountAuth({
       client_email: process.env.SHEET_CLIENT_EMAIL,
-      private_key: fromBase64(process.env.SHEET_PRIVATE_KEY),
+      private_key: process.env.SHEET_PRIVATE_KEY,
     })
     await doc.loadInfo()
     console.log(doc.title)
@@ -17,12 +17,9 @@ export default async (req, res) => {
     const professionals = rows
       .filter((i) => i.Ativo.toLowerCase() === "true")
       .map((i) => ({
-        nome: i.Nome,
-        tel: i.Telefone,
-        isWhats: i.Whatsapp === "TRUE" ? true : false,
-        atuacao: i.Atuacao,
-        category: i.Categoria,
-        instagram: i.Instagram,
+        equipe: i.equipe,
+        valor: i.valor,
+        total: i.total,
       }))
 
     res.json(professionals)

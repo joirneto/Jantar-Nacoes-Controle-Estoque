@@ -1,10 +1,8 @@
 # PrecisandoDeFaleCom - Fullstack Master
  
-[![HitCount](https://hits.dwyl.com/joirneto/palpite_box.svg)](https://hits.dwyl.com/joirneto/PrecisandoDeFaleCom)
+<!-- [![HitCount](https://hits.dwyl.com/joirneto/palpite_box.svg)](https://hits.dwyl.com/joirneto/PrecisandoDeFaleCom) -->
 
-Este projeto foi construído durante o curso Fullstack Master do [DevPleno](https://devpleno.com), tendo como base o projeto https://github.com/RenatoSiqueira/PrecisoDe. Uma versão online deste projeto pode ser encontrada em: https://precisando-de-fale-com.vercel.app/ .
-
-![Preview](https://github.com/joirneto/PrecisandoDeFaleCom/blob/main/public/TelaInicial.png?raw=true)
+<!-- ![Preview](https://github.com/joirneto/PrecisandoDeFaleCom/blob/main/public/TelaInicial.png?raw=true) -->
 
 
 ## Início

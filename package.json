@@ -1,5 +1,5 @@
 {
-  "name": "precisandodefalecom",
+  "name": "jantarnacoesibf",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/joirneto/PrecisandoDeFaleCom.git"
+    "url": "git+https://github.com/joirneto/Jantar-Nacoes-Controle-Estoque.git"
   },
   "keywords": [
     "profissionais",
@@ -19,9 +19,9 @@
   "author": "Joir Neto",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/joirneto/PrecisandoDeFaleCom/issues"
+    "url": "https://github.com/joirneto/Jantar-Nacoes-Controle-Estoque/issues"
   },
-  "homepage": "https://github.com/joirneto/PrecisandoDeFaleCom#readme",
+  "homepage": "https://github.com/joirneto/Jantar-Nacoes-Controle-Estoque#readme",
   "dependencies": {
     "autoprefixer": "^10.4.0",
     "formik": "^2.2.9",

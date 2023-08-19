@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+const currentYear = new Date().getFullYear();
 
 const NavBar = () => (
   <nav className="w-full py-4 bg-yellow-600 shadow">
@@ -7,7 +8,7 @@ const NavBar = () => (
       <nav className="flex items-center justify-between font-bold text-sm text-white uppercase no-underline">
         <Link href= "/">
           <a className="hover:text-gray-200 hover:underline px-4">
-            Precisando de ? Fale com !
+            JANTAR DAS NAÇÕES {currentYear} IBF
             </a>
         </Link>
         </nav>
