@@ -14,8 +14,8 @@ const Index = () => {
  
   useEffect( async () => {
     try {
-      const response = await fetch("/api/get-equipes")
-      const allData = await response.json()
+      const response = await fetch("/api/get-equipes");
+      const allData = await response.json();
       setDados(allData)
       const somaValores = allData?.reduce((acc, cur) => {
       const valor = cur.equipe !== 'bebidas' ?
@@ -36,26 +36,19 @@ const Index = () => {
       {isLoading ? <Loading/> : <>
       <PageTitle title="Home" />
       <Header />
-      {isLoading && (
-        <p className="container text-center text-4xl font-bold">Aguarde...</p>
-      )}
       <div className="container mx-auto flex flex-wrap justify-center items-center">
-      {!isLoading && (
-        <><span className="text-green-600 text-8xl font-bold hover:text-gray-700 pb-4">
+        <><span className="text-green-600 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
           OBJETIVO: {formatarMoeda(20000)}
-        </span><span className="text-indigo-900 text-8xl font-bold hover:text-gray-700 pb-4">
+        </span><span className="text-indigo-900 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
             VEDINDO: {formatarMoeda(total)}
-        </span><span className="text-cyan-600 text-8xl font-bold hover:text-gray-700 pb-4">
+        </span><span className="text-cyan-600 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
             FALTA: {formatarMoeda(20000 - total)}
         </span></>
-        )}
-        {!isLoading && (
-          <section className="grid gap-4 grid-cols-4 grid-rows-3">
+          <section className="grid gap-4 md:grid-cols-4 grid-cols-1 md:grid-rows-3 grid-rows-auto">
             {dados?.map((item, index) => {
               return <Equipes key={index} data={item} />
             })}
           </section>
-        )}
       </div>
       <HowWorks />
     </>}
