@@ -4,7 +4,6 @@ const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 const cred = require('../../cred.json')
 
 export default async (req, res) => {
-  console.log(req.query);
   try {
     await doc.useServiceAccountAuth({
       client_email: process.env.SHEET_CLIENT_EMAIL,
@@ -15,7 +14,7 @@ export default async (req, res) => {
     const sheet = doc.sheetsByIndex[0]
 
     const rows = await sheet.getRows()
-    const professionals = rows
+    const equipes = rows
       .filter((i) => i.Ativo.toLowerCase() === "true")
       .map((i) => ({
         equipe: i.equipe,
@@ -23,7 +22,7 @@ export default async (req, res) => {
         sobremesas_vendidas: i.sobremesas_vendidas
       }))
 
-    res.json(professionals)
+    res.json(equipes)
   } catch (error) {
     console.log(error)
     res.json({})

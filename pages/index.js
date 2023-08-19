@@ -10,22 +10,26 @@ import Loading from "../components/Loading";
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [total, setTotal] = useState(0);
-  const [dados, setDados] = useState();
+  const [dados, setDados] = useState({});
  
   useEffect( async () => {
-    const response = await fetch("/api/get-equipes")
-    const allData = await response.json()
-    setDados(allData)
-    const somaValores = allData?.reduce((acc, cur) => {
-    const valor = cur.equipe !== 'bebidas' ?
-      (parseInt(cur.pratos_vendidos)*15) + (parseInt(cur.sobremesas_vendidas)*5):
-      (parseInt(cur.pratos_vendidos)*2);
-      return acc + parseInt(valor)
+    try {
+      const response = await fetch("/api/get-equipes")
+      const allData = await response.json()
+      setDados(allData)
+      const somaValores = allData?.reduce((acc, cur) => {
+      const valor = cur.equipe !== 'bebidas' ?
+        (parseInt(cur.pratos_vendidos)*15) + (parseInt(cur.sobremesas_vendidas)*5):
+        (parseInt(cur.pratos_vendidos)*2);
+        return acc + parseInt(valor)
     }, 0)
   
-    setTotal(somaValores)
-    setIsLoading(false)
-  });
+      setTotal(somaValores)
+      setIsLoading(false)
+    } catch (error) {
+      
+    }
+  },[]);
 
   return (
     <div>
