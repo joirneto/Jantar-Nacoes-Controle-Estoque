@@ -1,50 +1,4 @@
-import React, { useState } from "react"
-import PageTitle from "../components/PageTitle"
-import { useFormik } from "formik"
-import * as Yup from "yup"
-
-import Confirmed from "../components/Confirmed"
-
-const validationSchema = Yup.object().shape({
-  Nome: Yup.string().required("Campo obrigatório"),
-  Telefone: Yup.string().required("Campo obrigatório"),
-  Categoria: Yup.string().required("Campo obrigatório"),
-})
-
-const Cadastro = () => {
-  const [success, setSuccess] = useState(false)
-
-  const {
-    values,
-    handleSubmit,
-    handleChange,
-    isSubmitting,
-    errors,
-    touched,
-    handleBlur,
-  } = useFormik({
-    initialValues: {
-      Nome: "",
-      Telefone: "",
-      Categoria: "",
-    },
-    validationSchema,
-    onSubmit: async (values) => {
-      try {
-        const response = await fetch("/api/post-new", {
-          method: "POST",
-          body: JSON.stringify(values),
-        })
-        await response.json()
-        setSuccess(true)
-      } catch (error) { }
-    },
-  })
-
-  return (
-    <section className="text-gray-700 body-font relative">
-      <PageTitle title="Cadastro" />
-      <div className="container px-5 py-12 mx-auto">
+      <div className="h-screen w-screen container px-5 py-12 mx-auto bg-cover mx-1" style={{ backgroundImage: "url('/equipes/bandeiras/brasil.jpg')"  }}>
         <div className="flex flex-col text-center w-full mb-4">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-800">
             Cadastrar Novo Profissional
@@ -111,8 +65,3 @@ const Cadastro = () => {
           </form>
         )}
       </div>
-    </section>
-  )
-}
-
-export default Cadastro

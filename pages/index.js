@@ -5,33 +5,31 @@ import NavSections from "../components/NavSections";
 import Equipes from "../components/Equipes";
 import HowWorks from "../components/HowWorks";
 import formatarMoeda from "../utils/formatarMoeda";
+import Loading from "../components/Loading";
 
 const Index = () => {
-  const [isLoading, setLoading] = useState(true);
-  const [dados, setDados] = useState({});
+  const [isLoading, setIsLoading] = useState(true);
   const [total, setTotal] = useState(0);
-
-  useEffect(async () => {
-    try {
-      const response = await fetch("/api/get-professionals")
-      const allData = await response.json()
-      setDados(allData)
-
-      const somaValores = allData?.reduce((acc, cur) => {
-        console.log(acc, cur)
-        return acc + parseInt(cur.valor)
-      }, 0)
-
-      setTotal(somaValores)
-      setLoading(false)
-
-    } catch (error) {
-      console.log(error)
-    }
-  }, []);
+  const [dados, setDados] = useState();
+ 
+  useEffect( async () => {
+    const response = await fetch("/api/get-equipes")
+    const allData = await response.json()
+    setDados(allData)
+    const somaValores = allData?.reduce((acc, cur) => {
+    const valor = cur.equipe !== 'bebidas' ?
+      (parseInt(cur.pratos_vendidos)*15) + (parseInt(cur.sobremesas_vendidas)*5):
+      (parseInt(cur.pratos_vendidos)*2);
+      return acc + parseInt(valor)
+    }, 0)
+  
+    setTotal(somaValores)
+    setIsLoading(false)
+  });
 
   return (
-    <>
+    <div>
+      {isLoading ? <Loading/> : <>
       <PageTitle title="Home" />
       <Header />
       {isLoading && (
@@ -56,7 +54,8 @@ const Index = () => {
         )}
       </div>
       <HowWorks />
-    </>
+    </>}
+    </div>
   )
 }
 
