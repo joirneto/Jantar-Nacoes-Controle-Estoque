@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/joirneto/Jantar-Nacoes-Controle-Estoque#readme",
   "dependencies": {
+    "@brazilian-utils/brazilian-utils": "^1.0.0-rc.12",
     "autoprefixer": "^10.4.0",
     "formik": "^2.2.9",
     "google-spreadsheet": "^3.1.15",

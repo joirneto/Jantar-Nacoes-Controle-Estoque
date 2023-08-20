@@ -1,6 +1,5 @@
 import { GoogleSpreadsheet } from "google-spreadsheet"
 import { fromBase64 } from "../../utils/base64"
-import { DateTime } from "luxon"
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 

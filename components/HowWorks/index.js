@@ -60,29 +60,8 @@ const HowWorks = () => (
   <div className="bg-gray-100 flex items-start lg:items-center justify-center pb-10">
     <div className="container mx-auto px-4 h-full">
       <h2 className="text-yellow-600 font-semibold tracking-tight leading-loose text-center text-3xl lg:text-4xl lg:text-5xl my-2 lg:my-4">
-        Como Funciona?
+        DOAÇÕES: PIX IBF: 63.290.530/0001-31
       </h2>
-
-      <section className="shadow-md bg-gray-200  overflow-hidden rounded-lg mt-6 sm:shadow-lg lg:mt-4 lg:mx-auto lg:max-w-4xl">
-        <Item
-          title="Qual o objetivo do site?"
-          text="Centralizar todos os excelentes profissionais através de indicações prévias."
-          />
-          <Item
-          title="Eu preciso pagar algo?"
-          text="Não. Todos os contatos listados aqui são apenas para facilitar para quem busca estes serviços."
-          />
-          <Item
-          title="Gostaria de indicar algumas pessoas. Como faço?"
-          text="Apenas preencha o formulário com os dados. Periodicamente, os dados são revisados e em breve constarão no site."
-          />
-          <Item
-          title="Só indique se for verdade e de qualidade!"
-          text="rt. 37. É proibida toda publicidade enganosa ou abusiva.
-          CDC - Lei nº 8.078 de 11 de Setembro de 1990
-          Artigo 37 da Lei nº 8.078 de 11 de Setembro de 1990."
-          />
-      </section>
     </div>
   </div>
 )

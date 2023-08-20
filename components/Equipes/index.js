@@ -16,7 +16,7 @@ const Equipes = ({ data: { equipe, pratos_vendidos, sobremesas_vendidas } }) => 
       </Link>
       <div className="bg-white flex flex-col justify-start p-6">
         <span className="text-red-900 text-2xl font-bold hover:text-gray-700 pb-4">
-          Valor arrecadado: {formatarMoeda(valor)}
+          {equipe !== 'missoes' ? `Valor arrecadado: ${formatarMoeda(valor)}` : 'Clique no banner de missões e veja o doado na barraca!'}
         </span>
       </div>
     </article>
