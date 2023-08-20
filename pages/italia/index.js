@@ -100,7 +100,7 @@ const venderSobremesas = async () => {
                   }
                 }}
               />
-                <button disabled={!sobremesas || sobremesas > dados.estoque_sobremesas} onClick={() => venderSobremesas()} className={sobremesas && sobremesas <= dados.estoque_sobremesas ? "h-24 w-48 md:h-36 md:w-96 bg-red-500 text-5xl text-white font-semibold py-2 px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500" : 
+                <button disabled={!sobremesas || sobremesas > dados.estoque_sobremesas} onClick={() => venderSobremesas()} className={sobremesas && sobremesas <= dados.estoque_sobremesas ? "h-24 w-48 md:h-36 md:w-96 bg-red-500 text-2xl md:text-5xl text-white font-semibold py-2 px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500" : 
               "h-24 w-48 md:h-36 md:w-96 bg-gray-300 text-2xl md:text-5xl text-gray-600  cursor-not-allowed font-semibold py-2 px-4 rounded-md py-3 px-4"}>
                   VENDER SOBREMESAS
               </button>
