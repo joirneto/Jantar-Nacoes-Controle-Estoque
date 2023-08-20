@@ -58,7 +58,7 @@ const venderPratos = async () => {
                 <input
                   type="number"
                   value={pratos}
-                  className="h-12 w-24 md:h-32 md:w-48 mx-4 md:mx-8 text-6xl text-center border-l border-r border-blue-500"
+                  className="h-12 w-24 md:h-32 md:w-48 mx-4 md:mx-8 text-4xl md:text-6xl text-center border-l border-r border-blue-500"
                   onChange={(e) => {
                     const newValue = parseInt(e.target.value);
                     if (!isNaN(newValue) && newValue >= 0) {
@@ -66,7 +66,7 @@ const venderPratos = async () => {
                     }
                   }}
                 />
-                <button disabled={!pratos || pratos > dados.estoque_pratos} onClick={() => venderPratos()} className={pratos && pratos <= dados.estoque_pratos ? "h-24 w-48 md:h-36 md:w-96 bg-red-500 text-6xl text-white font-semibold py-2 px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500" : 
+                <button disabled={!pratos || pratos > dados.estoque_pratos} onClick={() => venderPratos()} className={pratos && pratos <= dados.estoque_pratos ? "h-24 w-48 md:h-36 md:w-96 bg-red-500 text-2xl md:text-5xl text-white font-semibold py-2 px-4 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500" : 
               "h-24 w-48 md:h-36 md:w-96 bg-gray-300 text-2xl md:text-5xl text-gray-600 cursor-not-allowed font-semibold py-2 px-4 rounded-md py-3 px-4"}>
                   VENDER
                 </button>
