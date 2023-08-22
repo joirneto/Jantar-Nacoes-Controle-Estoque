@@ -40,7 +40,7 @@ const Index = () => {
         <><span className="text-green-600 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
           OBJETIVO: {formatarMoeda(20000)}
         </span><span className="text-indigo-900 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
-            VEDINDO: {formatarMoeda(total)}
+            VENDIDO: {formatarMoeda(total)}
         </span><span className="text-cyan-600 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
             FALTA: {formatarMoeda(20000 - total)}
         </span></>
