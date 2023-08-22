@@ -1,7 +1,6 @@
 import { GoogleSpreadsheet } from "google-spreadsheet"
 import { fromBase64 } from "../../utils/base64"
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
-const cred = require('../../cred.json')
 
 export default async (req, res) => {
   try {
