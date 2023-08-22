@@ -38,11 +38,11 @@ const Index = () => {
       <Header />
       <div className="container mx-auto flex flex-wrap justify-center items-center">
         <><span className="text-green-600 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
-          OBJETIVO : {formatarMoeda(20000)}
+          OBJETIVO: {formatarMoeda(20000)}
         </span><span className="text-indigo-900 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
-            VENDIDO : {formatarMoeda(total)}
+            VENDIDO: {formatarMoeda(total)}
         </span><span className="text-cyan-600 text-3xl md:text-8xl font-bold hover:text-gray-700 pb-4">
-            FALTA : {formatarMoeda(20000 - total)}
+            FALTA: {formatarMoeda(20000 - total)}
         </span></>
           <section className="grid gap-4 md:grid-cols-4 grid-cols-1 md:grid-rows-3 grid-rows-auto">
             {dados?.map((item, index) => {
