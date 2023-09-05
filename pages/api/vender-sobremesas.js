@@ -23,6 +23,8 @@ export default async (req, res) => {
       rowToUpdate.estoque_sobremesas = estoque_sobremesas;
       rowToUpdate.sobremesas_vendidas = sobremesas_vendidas;
       await rowToUpdate.save(); 
+      const valor = sobremesas * 5
+      fetch(`https://us-central1-dskills-bericap.cloudfunctions.net/newSale?value=${valor}`)
     }
   } catch (error) {
     console.log(error)

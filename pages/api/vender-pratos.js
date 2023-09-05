@@ -22,6 +22,8 @@ export default async (req, res) => {
       rowToUpdate.estoque_pratos = estoque_pratos;
       rowToUpdate.pratos_vendidos = pratos_vendidos;
       await rowToUpdate.save(); 
+      const valor = pratos * 15
+      fetch(`https://us-central1-dskills-bericap.cloudfunctions.net/newSale?value=${valor}`)
     }
   } catch (error) {
     console.log(error)
