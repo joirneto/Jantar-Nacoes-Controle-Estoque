@@ -21,8 +21,9 @@ export default async (req, res) => {
       const pratos_vendidos = parseInt(rowToUpdate.pratos_vendidos) + pratos
       rowToUpdate.estoque_pratos = estoque_pratos;
       rowToUpdate.pratos_vendidos = pratos_vendidos;
-      await rowToUpdate.save(); 
-      const valor = pratos * 15
+      await rowToUpdate.save();
+      // Calcula valor da venda e faz request para salvar na api de tempo real  
+      const valor = equipe == "bebidas" ? pratos * 2 : pratos * 15;
       fetch(`https://us-central1-dskills-bericap.cloudfunctions.net/newSale?value=${valor}`)
     }
   } catch (error) {
