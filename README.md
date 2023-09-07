@@ -1,6 +1,5 @@
 # Jantar-Nacoes-Controle-Estoque
- <!-- ![Preview](https://github.com/joirneto/Jantar-Nacoes-Controle-Estoque/blob/main/public/TelaInicial.png) -->
-
+![Preview](https://github.com/joirneto/Jantar-Nacoes-Controle-Estoque/blob/main/public/TelaInicial.png?raw=true)
 
 ## Início
 
